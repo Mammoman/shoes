@@ -6,6 +6,9 @@
   flex-direction: column;
   border-right: 1px solid var(--border-color);
   padding: 32px 0;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 100;
 }
 
 .sidebar-logo {
@@ -24,6 +27,7 @@
   background-size: 16px 16px;
   background-position: top center, bottom left, bottom right;
   background-repeat: no-repeat;
+  flex-shrink: 0;
 }
 
 .sidebar-nav {
@@ -41,6 +45,7 @@
   padding: 16px 0;
   color: var(--text-muted);
   transition: all 0.2s ease;
+  position: relative;
 }
 
 .nav-icon-wrapper {
@@ -51,11 +56,13 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
 
 .nav-label {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 500;
+  transition: opacity 0.2s ease;
 }
 
 .nav-item:hover {
@@ -90,10 +97,81 @@
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .user-dots {
   color: var(--text-muted);
   font-size: 1.2rem;
   line-height: 1;
+}
+
+/* Expanded Desktop Mode */
+@media (min-width: 1024px) {
+  .sidebar {
+    padding: 32px 16px;
+  }
+  
+  .sidebar-logo {
+    justify-content: flex-start;
+    padding-left: 12px;
+  }
+  
+  .nav-item {
+    flex-direction: row;
+    padding: 12px 16px;
+    border-radius: var(--border-radius-md);
+  }
+  
+  .nav-label {
+    font-size: 0.9rem;
+  }
+  
+  .sidebar-footer {
+    justify-content: flex-start;
+  }
+  
+  .user-profile {
+    flex-direction: row;
+    padding: 16px;
+    border-radius: var(--border-radius-md);
+    width: 100%;
+  }
+  
+  .user-profile:hover {
+    background-color: var(--bg-color);
+  }
+  
+  .user-dots {
+    margin-left: auto;
+  }
+}
+
+/* Mobile responsive fixes for the whole app */
+@media (max-width: 768px) {
+  .header-filters {
+    flex-wrap: wrap;
+  }
+  
+  .header-filters .filter-group {
+    min-width: calc(50% - 8px);
+  }
+  
+  .header-filters .flex-2 {
+    min-width: 100%;
+  }
+
+  .availability-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .tabs-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 4px;
+  }
+  
+  .tab-content {
+    padding: 16px !important;
+  }
 }

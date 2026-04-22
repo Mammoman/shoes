@@ -5,6 +5,8 @@ import ProductsLayout from './pages/Products/ProductsLayout';
 import ProductGrid from './pages/Products/ProductGrid';
 import Availability from './pages/Products/Availability';
 import BestSellers from './pages/Products/BestSellers';
+import Favorites from './pages/Favorites/Favorites';
+import Profile from './pages/Profile/Profile';
 import './App.css';
 
 function App() {
@@ -21,9 +23,10 @@ function App() {
               <Route path="availability" element={<Availability />} />
               <Route path="best-sellers" element={<BestSellers />} />
             </Route>
-            <Route path="/favorites" element={<div className="placeholder">Favorites Page</div>} />
+            <Route path="/favorites" element={<Favorites />} />
             <Route path="/sources" element={<div className="placeholder">Sources Page</div>} />
             <Route path="/comparison" element={<div className="placeholder">Comparison Page</div>} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </main>
       </div>

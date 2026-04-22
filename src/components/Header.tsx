@@ -1,7 +1,14 @@
 import { Search, ChevronDown, ArrowRight } from 'lucide-react';
+import { useAppContext } from '../context/AppContext';
 import './Header.css';
 
 export default function Header() {
+  const { 
+    searchQuery, setSearchQuery,
+    categoryFilter, setCategoryFilter,
+    brandFilter, setBrandFilter
+  } = useAppContext();
+
   return (
     <header className="header">
       <div className="header-top">
@@ -15,9 +22,10 @@ export default function Header() {
             <Search size={18} className="search-icon" />
             <input 
               type="text" 
-              placeholder="Nike Air Max Terrascape 90" 
+              placeholder="Search by title..." 
               className="search-input"
-              defaultValue="Nike Air Max Terrascape 90"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
         </div>
@@ -25,9 +33,14 @@ export default function Header() {
         <div className="filter-group">
           <label className="filter-label">Category</label>
           <div className="select-wrapper">
-            <select className="filter-select">
-              <option>Shoes</option>
-              <option>Apparel</option>
+            <select 
+              className="filter-select"
+              value={categoryFilter}
+              onChange={(e) => setCategoryFilter(e.target.value)}
+            >
+              <option value="All">All</option>
+              <option value="Shoes">Shoes</option>
+              <option value="Apparel">Apparel</option>
             </select>
             <ChevronDown size={16} className="select-icon" />
           </div>
@@ -36,9 +49,14 @@ export default function Header() {
         <div className="filter-group">
           <label className="filter-label">Brand</label>
           <div className="select-wrapper">
-            <select className="filter-select">
-              <option>Nike</option>
-              <option>Adidas</option>
+            <select 
+              className="filter-select"
+              value={brandFilter}
+              onChange={(e) => setBrandFilter(e.target.value)}
+            >
+              <option value="All">All</option>
+              <option value="Nike">Nike</option>
+              <option value="Adidas">Adidas</option>
             </select>
             <ChevronDown size={16} className="select-icon" />
           </div>

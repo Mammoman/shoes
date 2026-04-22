@@ -35,14 +35,14 @@ export default function Sidebar() {
       </nav>
 
       <div className="sidebar-footer">
-        <div className="user-profile">
+        <NavLink to="/profile" className="user-profile" style={{ textDecoration: 'none' }}>
           <img 
             src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=64&q=80" 
             alt="User profile" 
             className="user-avatar"
           />
           <div className="user-dots">•••</div>
-        </div>
+        </NavLink>
       </div>
     </aside>
   );

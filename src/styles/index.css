@@ -14,7 +14,8 @@
   --danger-bg: #fce8e8;
   --danger-text: #d92d20;
 
-  --sidebar-width: 240px;
+  --sidebar-width: 80px; /* Reduced width */
+  --sidebar-expanded-width: 220px;
   --header-height: 80px;
 
   --border-radius-sm: 8px;
@@ -24,6 +25,12 @@
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
   --shadow-md: 0 4px 6px rgba(0,0,0,0.05);
   --shadow-lg: 0 10px 15px rgba(0,0,0,0.05);
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --sidebar-width: var(--sidebar-expanded-width);
+  }
 }
 
 * {
