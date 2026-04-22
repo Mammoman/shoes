@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { PackageSearch, Star, Network, SplitSquareHorizontal } from 'lucide-react';
+import { useAppContext } from '../context/AppContext';
 import './Sidebar.css';
 
 const navItems = [
@@ -10,9 +11,13 @@ const navItems = [
 ];
 
 export default function Sidebar() {
+  const { isSidebarOpen, toggleSidebar } = useAppContext();
+
   return (
-    <aside className="sidebar">
-      <div className="sidebar-logo">
+    <>
+      <div className={`sidebar-overlay ${isSidebarOpen ? 'show' : ''}`} onClick={toggleSidebar}></div>
+      <aside className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+        <div className="sidebar-logo">
         <div className="logo-icon"></div>
       </div>
       
@@ -44,6 +49,7 @@ export default function Sidebar() {
           <div className="user-dots">•••</div>
         </NavLink>
       </div>
-    </aside>
+      </aside>
+    </>
   );
 }

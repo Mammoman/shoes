@@ -18,6 +18,12 @@
   padding: 24px 32px;
 }
 
+@media (max-width: 768px) {
+  .page-content {
+    padding: 16px;
+  }
+}
+
 .placeholder {
   display: flex;
   align-items: center;

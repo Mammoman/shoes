@@ -23,6 +23,8 @@ interface AppContextType {
   setCategoryFilter: (cat: string) => void;
   brandFilter: string;
   setBrandFilter: (brand: string) => void;
+  isSidebarOpen: boolean;
+  toggleSidebar: () => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -30,8 +32,9 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [favorites, setFavorites] = useState<number[]>([]);
-  const [categoryFilter, setCategoryFilter] = useState('Shoes');
+  const [categoryFilter, setCategoryFilter] = useState('All');
   const [brandFilter, setBrandFilter] = useState('All');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleFavorite = (id: number) => {
     setFavorites(prev => 
@@ -44,7 +47,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       searchQuery, setSearchQuery, 
       favorites, toggleFavorite,
       categoryFilter, setCategoryFilter,
-      brandFilter, setBrandFilter
+      brandFilter, setBrandFilter,
+      isSidebarOpen, toggleSidebar: () => setIsSidebarOpen(prev => !prev)
     }}>
       {children}
     </AppContext.Provider>

@@ -320,3 +320,19 @@
 .add-to-cart-btn:hover {
   background-color: var(--primary-hover);
 }
+
+@media (max-width: 768px) {
+  .modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .modal-image-col {
+    min-height: 200px;
+    padding: 24px;
+  }
+  
+  .modal-info-col {
+    padding: 24px;
+  }
+}

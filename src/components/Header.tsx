@@ -1,4 +1,4 @@
-import { Search, ChevronDown, ArrowRight } from 'lucide-react';
+import { Search, ChevronDown, ArrowRight, Menu } from 'lucide-react';
 import { useAppContext } from '../context/AppContext';
 import './Header.css';
 
@@ -6,12 +6,16 @@ export default function Header() {
   const { 
     searchQuery, setSearchQuery,
     categoryFilter, setCategoryFilter,
-    brandFilter, setBrandFilter
+    brandFilter, setBrandFilter,
+    toggleSidebar
   } = useAppContext();
 
   return (
     <header className="header">
       <div className="header-top">
+        <button className="mobile-menu-btn" onClick={toggleSidebar}>
+          <Menu size={24} />
+        </button>
         <h1 className="header-title">Search</h1>
       </div>
       

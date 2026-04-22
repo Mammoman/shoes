@@ -11,6 +11,17 @@
   color: var(--text-main);
 }
 
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  color: var(--text-main);
+}
+
 .header-filters {
   display: flex;
   gap: 16px;
@@ -113,4 +124,21 @@
 
 .search-btn:hover {
   background-color: var(--primary-hover);
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter-group.justify-end {
+    margin-top: 16px;
+  }
 }
