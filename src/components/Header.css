@@ -1,0 +1,116 @@
+.header {
+  padding: 32px 32px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.header-filters {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.filter-group.flex-2 {
+  flex: 2;
+}
+
+.filter-group.justify-end {
+  flex: 0;
+}
+
+.filter-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 16px;
+  color: var(--text-muted);
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px 12px 48px;
+  border: none;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.95rem;
+  color: var(--text-main);
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+.search-input:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+.select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 12px 40px 12px 16px;
+  border: none;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius-sm);
+  appearance: none;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-select:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+.select-icon {
+  position: absolute;
+  right: 16px;
+  pointer-events: none;
+  color: var(--text-muted);
+}
+
+.search-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.search-btn:hover {
+  background-color: var(--primary-hover);
+}

@@ -1,0 +1,87 @@
+.bestsellers-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.bestsellers-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.bestsellers-table th {
+  text-align: left;
+  padding: 16px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.bestsellers-table td {
+  padding: 16px;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.bestsellers-table tr:last-child td {
+  border-bottom: none;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.rank {
+  color: var(--text-muted);
+  margin-right: 8px;
+  font-size: 0.85rem;
+}
+
+.rating-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.rating-diff {
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.rating-diff.success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+}
+
+.rating-diff.danger {
+  background-color: var(--danger-bg);
+  color: var(--danger-text);
+}
+
+.see-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.see-more-btn {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--primary-color);
+  padding-bottom: 2px;
+}
+
+.see-more-btn:hover {
+  color: var(--primary-hover);
+  border-bottom-color: var(--primary-hover);
+}
